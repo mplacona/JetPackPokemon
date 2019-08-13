@@ -25,9 +25,11 @@
                 android:textStyle="bold"
                 tools:text="Pikachu"
                 android:padding="4dp"
-                android:textSize="16sp"
+                android:textSize="26sp"
                 app:layout_constraintStart_toEndOf="@id/pokemon_image" app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="130dp"/>
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="130dp"
+                android:layout_marginTop="32dp" android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -35,9 +37,10 @@
                 android:padding="4dp"
                 app:layout_constraintStart_toEndOf="@+id/pokemon_name"
                 tools:text="#123"
-                android:textSize="16sp"
+                android:textSize="26sp"
                 android:textStyle="bold"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="32dp"
+                android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

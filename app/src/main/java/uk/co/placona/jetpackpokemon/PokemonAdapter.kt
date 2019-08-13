@@ -18,7 +18,7 @@ class PokemonAdapter(private val pokemons: List<Result>) : RecyclerView.Adapter<
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val number = (position + 1).toString()
-        holder.pokemonName.text = pokemons[position].name
+        holder.pokemonName.text = pokemons[position].name.capitalize()
         holder.pokemonNumber.text = "# $number"
         Glide.with(holder.pokemonImage.context).load("http://www.serebii.net/pokemongo/pokemon/${String.format("%03d", position+1)}.png").
             into(holder.pokemonImage)
