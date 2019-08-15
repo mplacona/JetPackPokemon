@@ -13,15 +13,15 @@ class PokemonViewModel: ViewModel() {
     private val tag = MainActivity::class.java.simpleName
     private val pokeClient: PokeClient = PokeClient()
     //this is the data that we will fetch asynchronously
-    lateinit var pokemonList: MutableLiveData<List<Result>>
+    val pokemonList: MutableLiveData<List<Result>> by lazy {
+        MutableLiveData<List<Result>>()
+    }
 
 
     //we will call this method to get the data
     fun getPokemons(): LiveData<List<Result>> {
         //if the list is null
-
-        if(!::pokemonList.isInitialized){
-            pokemonList = MutableLiveData()
+        if(pokemonList.value == null){
             //we will load it asynchronously from server in this method
             Log.d(tag, "Loading pokemons")
             loadPokemons()
