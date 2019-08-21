@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+           xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/nav"
+        app:startDestination="@id/pokemonList">
+
+    <activity
+            android:id="@+id/pokemonList"
+            android:name="uk.co.placona.jetpackpokemon.PokemonList"
+            android:label="pokemon_list"
+            tools:layout="@layout/pokemon_list" />
+
+    <activity
+            android:id="@+id/pokemonDetails"
+            android:name="uk.co.placona.jetpackpokemon.PokemonDetails"
+            android:label="pokemon_details"
+            tools:layout="@layout/pokemon_details" />
+    <activity
+            android:id="@+id/pokemonCustomised"
+            android:name="uk.co.placona.jetpackpokemon.PokemonCustomised"
+            android:label="pokemon_customised"
+            tools:layout="@layout/pokemon_customised" />
+</resources>
