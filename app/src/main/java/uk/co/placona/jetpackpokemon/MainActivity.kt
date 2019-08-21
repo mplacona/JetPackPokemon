@@ -1,17 +1,14 @@
 package uk.co.placona.jetpackpokemon
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import androidx.core.view.ViewCompat.setNestedScrollingEnabled
-import androidx.recyclerview.widget.DefaultItemAnimator
-
 
 
 class MainActivity : AppCompatActivity() {
