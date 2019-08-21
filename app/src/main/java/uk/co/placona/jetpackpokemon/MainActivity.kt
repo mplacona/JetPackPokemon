@@ -1,6 +1,8 @@
 package uk.co.placona.jetpackpokemon
 
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -9,6 +11,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
+
+    private val tag = MainActivity::class.java.simpleName
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +28,12 @@ class MainActivity : AppCompatActivity() {
             Observer<List<Result>> { pokemonList ->
                 recyclerView.adapter = PokemonAdapter(pokemonList)
             })
+
+        recyclerView.addOnItemClickListener(object: OnItemClickListener {
+            override fun onItemClicked(position: Int, view: View) {
+                Log.d(tag, "clicked")
+            }
+        })
 
     }
 }
