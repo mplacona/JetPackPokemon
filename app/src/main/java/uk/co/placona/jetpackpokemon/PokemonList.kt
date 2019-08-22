@@ -29,7 +29,7 @@ class PokemonList : AppCompatActivity() {
         val model = ViewModelProviders.of(this).get(PokemonViewModel::class.java)
 
         model.getPokemons().observe(this,
-            Observer<List<Result>> { pokemonList ->
+            Observer<List<Pokemon>> { pokemonList ->
                 recyclerView.adapter = PokemonAdapter(pokemonList)
             })
 

@@ -24,5 +24,5 @@ class PokeClient {
         pokeApi = retrofit.create(PokeApi::class.java)
     }
 
-    fun getPokemon(): Call<Pokemon> = pokeApi.getPokemons()
+    fun getPokemon(): Call<Results> = pokeApi.getPokemons()
 }
