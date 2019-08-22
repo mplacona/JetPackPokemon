@@ -1,7 +1,7 @@
 package uk.co.placona.jetpackpokemon
 import com.google.gson.annotations.SerializedName
 
-data class Pokemon(
+data class Results(
     @SerializedName("count")
     val count: Int,
     @SerializedName("next")
@@ -9,10 +9,10 @@ data class Pokemon(
     @SerializedName("previous")
     val previous: Any,
     @SerializedName("results")
-    val results: List<Result>
+    val results: List<Pokemon>
 )
 
-data class Result(
+data class Pokemon(
     @SerializedName("name")
     val name: String,
     @SerializedName("url")

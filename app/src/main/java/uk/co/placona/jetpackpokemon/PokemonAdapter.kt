@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item.view.*
 import java.util.regex.Pattern
 
-class PokemonAdapter(private val pokemons: List<Result>) : RecyclerView.Adapter<PokemonAdapter.ViewHolder>() {
+class PokemonAdapter(private val pokemons: List<Pokemon>) : RecyclerView.Adapter<PokemonAdapter.ViewHolder>() {
     override fun getItemCount() = pokemons.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

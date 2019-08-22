@@ -24,13 +24,13 @@ class MainActivity : AppCompatActivity() {
         recyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
 
         val pokemons = pokeClient.getPokemon()
-        pokemons.enqueue(object : Callback<Pokemon> {
-            override fun onResponse(call: Call<Pokemon>, response: Response<Pokemon>) {
-                val pokemonList: List<Result> = response.body()!!.results
+        pokemons.enqueue(object : Callback<Results> {
+            override fun onResponse(call: Call<Results>, response: Response<Results>) {
+                val pokemonList: List<Pokemon> = response.body()!!.results
                 recyclerView.adapter = PokemonAdapter(pokemonList)
             }
 
-            override fun onFailure(call: Call<Pokemon>, t: Throwable) {
+            override fun onFailure(call: Call<Results>, t: Throwable) {
                 Log.d("ERROR", "Failure " + t.message)
             }
         })
