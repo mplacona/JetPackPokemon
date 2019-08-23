@@ -1,5 +1,6 @@
 package uk.co.placona.jetpackpokemon
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 data class Results(
@@ -19,7 +20,10 @@ data class Pokemon(
     val name: String,
     @SerializedName("url")
     val url: String
-)
+){
+    @PrimaryKey(autoGenerate = true)
+    var pokemonId: Int = 0
+}
 
 data class PokemonDetails(
     val id:Int,

@@ -73,12 +73,12 @@
             app:layout_constraintTop_toBottomOf="@+id/pokemon_height" />
 
     <Button
-            android:id="@+id/edit_btn"
+            android:id="@+id/pet_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:backgroundTint="#E83B40"
-            android:text="Edit"
+            android:text="Make my pet"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

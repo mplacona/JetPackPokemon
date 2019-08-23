@@ -1,16 +1,18 @@
 package uk.co.placona.jetpackpokemon
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.lifecycle.LiveData
+import androidx.room.*
 
 @Dao
 interface PokemonDao {
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(pokemon: Pokemon)
     @Update
     fun update(pokemon: Pokemon)
+    @Query("DELETE FROM pokemons WHERE name = :name")
+    fun deleteByName(name: String)
     @Query("SELECT * FROM pokemons WHERE name LIKE :name")
-    fun selectByName(name: String): Pokemon
+    fun selectByName(name: String): LiveData<Pokemon>
+
+
 }
