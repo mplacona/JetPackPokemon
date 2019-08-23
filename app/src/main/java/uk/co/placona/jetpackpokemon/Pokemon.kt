@@ -1,4 +1,5 @@
 package uk.co.placona.jetpackpokemon
+import androidx.room.Entity
 import com.google.gson.annotations.SerializedName
 
 data class Results(
@@ -12,6 +13,7 @@ data class Results(
     val results: List<Pokemon>
 )
 
+@Entity(tableName = "pokemons")
 data class Pokemon(
     @SerializedName("name")
     val name: String,
