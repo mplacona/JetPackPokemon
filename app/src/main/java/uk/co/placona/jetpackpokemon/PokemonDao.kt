@@ -11,6 +11,6 @@ interface PokemonDao {
     fun insert(pokemon: Pokemon)
     @Update
     fun update(pokemon: Pokemon)
-    @Query("SELECT * FROM pokemon WHERE name LIKE :name")
+    @Query("SELECT * FROM pokemons WHERE name LIKE :name")
     fun selectByName(name: String): Pokemon
 }
