@@ -1,12 +1,11 @@
 package uk.co.placona.jetpackpokemon
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -33,10 +32,18 @@ class PokemonList : AppCompatActivity() {
                 recyclerView.adapter = PokemonAdapter(pokemonList)
             })
 
+//        recyclerView.addOnItemClickListener(object: OnItemClickListener {
+//            override fun onItemClicked(position: Int, view: View) {
+//                Navigation.findNavController(view).navigate(R.id.pokemonDetails);
+//            }
+//        })
+
         recyclerView.addOnItemClickListener(object: OnItemClickListener {
             override fun onItemClicked(position: Int, view: View) {
-                Log.d(tag, "clicked")
-                Navigation.findNavController(this@PokemonList, R.id.nav_host).navigate(R.id.pokemonDetails)
+                val intent = Intent(applicationContext, DetailsActivity::class.java).apply {
+                    putExtra("POKEMON_ID", position+1)
+                }
+                startActivity(intent)
             }
         })
     }

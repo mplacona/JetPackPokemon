@@ -18,3 +18,19 @@ data class Pokemon(
     @SerializedName("url")
     val url: String
 )
+
+data class PokemonDetails(
+    val id:Int,
+    val name: String,
+    val height: Int,
+    val weight: Int,
+    val abilities: List<Ability>
+){
+    val capitalizedName: String
+        get() = this.name.capitalize()
+}
+
+data class Ability(
+    val name: String,
+    val url: String
+)

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">JetPackPokemon</string>
+    <string name="pokemon_image_url">http://www.serebii.net/pokemongo/pokemon/%1$s.png</string>
 </resources>

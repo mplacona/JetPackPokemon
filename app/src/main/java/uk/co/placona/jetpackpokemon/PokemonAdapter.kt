@@ -11,9 +11,13 @@ import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item.view.*
 import java.util.regex.Pattern
 
+
+
 @SuppressLint("DefaultLocale", "SetTextI18n")
 class PokemonAdapter(private val pokemons: List<Pokemon>) : RecyclerView.Adapter<PokemonAdapter.ViewHolder>() {
+
     override fun getItemCount() = pokemons.size
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item, parent, false))
@@ -23,7 +27,12 @@ class PokemonAdapter(private val pokemons: List<Pokemon>) : RecyclerView.Adapter
         val number = getPokemonId(pokemons[position].url)
         holder.pokemonName.text = pokemons[position].name.capitalize()
         holder.pokemonNumber.text = "# $number"
-        Glide.with(holder.pokemonImage.context).load("http://www.serebii.net/pokemongo/pokemon/${String.format("%03d", number.toInt())}.png").
+        val pokemonImage = holder.pokemonImage.context.getString(
+            R.string.pokemon_image_url,
+            String.format("%03d", number.toInt())
+        )
+
+        Glide.with(holder.pokemonImage.context).load(pokemonImage).
             into(holder.pokemonImage)
 
     }
